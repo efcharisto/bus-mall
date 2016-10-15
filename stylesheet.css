@@ -1,3 +1,7 @@
-#products {
+#merch {
   margin: 30px;
+}
+
+.productPix {
+  list-style: none
 }
