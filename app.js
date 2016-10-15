@@ -26,7 +26,7 @@ function Photo(name, path, vote) {
 // http://stackoverflow.com/questions/2735881/adding-images-to-the-html-with-javascript
 function domStuff() {
   var img = document.createElement('img');
-  img.src = 'http://www.boxmaker.com/wp-content/uploads/2015/12/seattle-icon.png';
+  img.src = 'img/bag.jpg';
   var src = document.getElementById('products');
   src.appendChild(img);
 }
