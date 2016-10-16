@@ -11,6 +11,10 @@ function Sale(name, path) {
   var pixPath = ['img/bag.jpg', 'img/banana.jpg', 'img/bathroom.jpg', 'img/boots.jpg', 'img/breakfast.jpg'];
 
   function randomProduct() {
+    var img = document.createElement('img');
+    img.src = pixPath[randomPic];
+    var src = document.getElementById('product1');
+    src.appendChild(img);
     for (var i = 0; i <= pixPath.length; i++) {
       var randomPic = Math.floor((Math.random() * pixPath.length));;
       //  this.showAllPix.push(path);
@@ -29,11 +33,4 @@ function Sale(name, path) {
 //trying to display 1 img using DOM. Got help here
 // http://stackoverflow.com/questions/2735881/adding-images-to-the-html-with-javascript
 
-function domStuff() {
-  var img = document.createElement('img');
-  img.src = 'img/bag.jpg';
-  var src = document.getElementById('product1');
-  src.appendChild(img);
-}
 new Sale('bag', 'img/bag.jpg');
-domStuff();
