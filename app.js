@@ -15,12 +15,12 @@ var Sale = function(name, pixPath) {
 function randomProduct() {
   for (var i = 0; i <= pixPath.length; i++) {
     var randomPic = Math.floor(Math.random() * pixPath.length);
-    document.getElementById('product1').getSource = pixPath[randomPic];
     var makeImg = document.createElement('img');
     var getSource = document.getElementById('product1');
     makeImg.getSource = pixPath[i];
     getSource.appendChild(makeImg);
-    console.log(pixPath);
+    document.getElementById('product1').getSource = pixPath[randomPic];
+    console.log(pixPath[randomPic]);
   }
 }
 
