@@ -2,24 +2,23 @@
 
 var showAllPix = [];
 
-var Sale = function(name, path) {
+var pixPath = ['img/bag.jpg', 'img/banana.jpg', 'img/bathroom.jpg', 'img/boots.jpg', 'img/breakfast.jpg', 'img/bubblegum.jpg'];
+
+var Sale = function(name, pixPath) {
   this.name = name;
-  this.path = path;
+  this.path = pixPath;
   this.vote = 0;
   this.totalVotes = 0;
   showAllPix.push(this);
 };
 
 function randomProduct() {
-  var pixPath = ['img/bag.jpg', 'img/banana.jpg', 'img/bathroom.jpg', 'img/boots.jpg', 'img/breakfast.jpg', 'img/bubblegum.jpg'];
   var img = document.createElement('img');
-  img.src = pixPath[i];
   var src = document.getElementById('product1');
+  img.src = pixPath[i];
   src.appendChild(img);
   for (var i = 0; i <= pixPath.length; i++) {
-    var randomPic = Math.floor((Math.random() * pixPath.length));
-    //round a random value taken from array several times(arr length)
-    //this.showAllPix.push(path);
+    var randomPic = Math.floor(Math.random() * pixPath.length);
     document.getElementById('product1').src = pixPath[randomPic];
   }
 }
