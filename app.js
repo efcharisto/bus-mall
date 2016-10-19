@@ -13,13 +13,14 @@ var Sale = function(name, pixPath) {
 };
 
 function randomProduct() {
-  var img = document.createElement('img');
-  var src = document.getElementById('product1');
-  img.src = pixPath[i];
-  src.appendChild(img);
   for (var i = 0; i <= pixPath.length; i++) {
     var randomPic = Math.floor(Math.random() * pixPath.length);
-    document.getElementById('product1').src = pixPath[randomPic];
+    document.getElementById('product1').getSource = pixPath[randomPic];
+    var makeImg = document.createElement('img');
+    var getSource = document.getElementById('product1');
+    makeImg.getSource = pixPath[i];
+    getSource.appendChild(makeImg);
+    console.log(pixPath);
   }
 }
 
@@ -31,6 +32,6 @@ randomProduct();
 // for (var i = 0; i <= pixPath.length; i++) {
 //   this.push(showAllPix); } not working yet
 
-new Sale('bag', 'img/bag.jpg');
+new Sale('bag', pixPath);
 new Sale('banana', 'img/banana.jpg');
 new Sale('bathroom', 'img/bathroom.jpg');
