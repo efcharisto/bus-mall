@@ -30,7 +30,4 @@ function Sale(name, path) {
   //   this.push(showAllPix); } not working yet
 };
 
-//trying to display 1 img using DOM. Got help here
-// http://stackoverflow.com/questions/2735881/adding-images-to-the-html-with-javascript
-
 new Sale('bag', 'img/bag.jpg');
