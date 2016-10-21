@@ -12,13 +12,30 @@ var Sale = function(name, pixPath) {
   showAllPix.push(this);
 };
 
-function randomProduct() {
+function randomProduct1() {
   // for (var i = 0; i < showAllPix.length; i++) {
   var randomNum = Math.floor(Math.random() * showAllPix.length);
   //get 3 different random numbers first and then focus on the rest
   var product1 = document.getElementById('product1');
   product1.src = showAllPix[randomNum].pixPath;
+  // }
+}
 
+function randomProduct2() {
+  // for (var i = 0; i < showAllPix.length; i++) {
+  var randomNum = Math.floor(Math.random() * showAllPix.length);
+  //get 3 different random numbers first and then focus on the rest
+  var product2 = document.getElementById('product2');
+  product2.src = showAllPix[randomNum].pixPath;
+  // }
+}
+
+function randomProduct3() {
+  // for (var i = 0; i < showAllPix.length; i++) {
+  var randomNum = Math.floor(Math.random() * showAllPix.length);
+  //get 3 different random numbers first and then focus on the rest
+  var product3 = document.getElementById('product3');
+  product3.src = showAllPix[randomNum].pixPath;
   // }
 }
 
@@ -32,7 +49,9 @@ new Sale('cthulhu', 'img/cthulhu.jpg');
 new Sale('chair', 'img/chair.jpg');
 new Sale('dog-duck', 'img/dog-duck.jpg');
 new Sale('dragon', 'img/dragon.jpg');
-randomProduct();
+randomProduct1();
+randomProduct2();
+randomProduct3();
 
 // randomNum: function(min, max) {
 //   return Math.floor(Math.random() * (max - min + 1) + min);
