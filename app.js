@@ -6,7 +6,7 @@ var pixPath = ['img/bag.jpg', 'img/banana.jpg', 'img/bathroom.jpg', 'img/boots.j
 
 var Sale = function(name, pixPath) {
   this.name = name;
-  this.path = pixPath;
+  this.pixPath = pixPath;
   this.vote = 0;
   this.totalVotes = 0;
   showAllPix.push(this);
@@ -14,17 +14,18 @@ var Sale = function(name, pixPath) {
 
 function randomProduct() {
   for (var i = 0; i <= pixPath.length; i++) {
-    var randomPic = Math.floor(Math.random() * pixPath.length);
-    var makeImg = document.createElement('img');
-    var getSource = document.getElementById('product1');
-    makeImg.getSource = pixPath[i];
-    getSource.appendChild(makeImg);
-    document.getElementById('product1').getSource = pixPath[randomPic];
-    console.log(pixPath[randomPic]);
+    var randomNum = Math.floor(Math.random() * pixPath.length);
+    var randomPic = pixPath[randomNum];
+    var product1 = document.getElementById('product1');
+    product1.src = showAllPix.pixPath[randomPic];
+    //src.appendChild(product1);
+    document.getElementById('product1').src = pixPath[randomPic];
+    console.log(pixPath[randomPic]); //shows random paths for img but nothing displays on the page
   }
 }
 
 randomProduct();
+
 // randomNum: function(min, max) {
 //   return Math.floor(Math.random() * (max - min + 1) + min);
 // },
@@ -32,6 +33,6 @@ randomProduct();
 // for (var i = 0; i <= pixPath.length; i++) {
 //   this.push(showAllPix); } not working yet
 
-new Sale('bag', pixPath);
+new Sale('bag', pixPath); //not working yet, to be used later
 new Sale('banana', 'img/banana.jpg');
 new Sale('bathroom', 'img/bathroom.jpg');
