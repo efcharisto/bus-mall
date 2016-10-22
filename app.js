@@ -12,6 +12,18 @@ var Sale = function(name, pixPath) {
   showAllPix.push(this);
 };
 
+function randomizer(){
+  var numberOne = Math.floor(Math.random() * showAllPix.length);
+  var numberTwo = Math.floor(Math.random() * showAllPix.length);
+  var numberThree = Math.floor(Math.random() * showAllPix.length);
+  var randomNum = Math.floor(Math.random() * showAllPix.length);
+  do {
+    randomNum = Math.floor(Math.random() * showAllPix.length);
+  } while(numberTwo === numberThree || numberTwo === numberOne);
+  console.log(randomNum);
+}
+// randomizer();
+
 function randomProduct1() {
   // for (var i = 0; i < showAllPix.length; i++) {
   var randomNum = Math.floor(Math.random() * showAllPix.length);
