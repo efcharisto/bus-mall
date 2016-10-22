@@ -47,6 +47,7 @@ randomizer(); // ^
 function randomProducts() {
   var product1 = document.getElementById('product1');
   product1.src = showAllPix[numberOne].pixPath;
+  product1.name = showAllPix[numberOne].name;
 
   var product2 = document.getElementById('product2');
   product2.src = showAllPix[numberTwo].pixPath;
@@ -56,10 +57,13 @@ function randomProducts() {
 }
 randomProducts();
 
-document.getElementById('merch').addEventListener('click', function remakeProducts() {
-  var redo = document.getElementById('merch');
-  redo.onclick = randomProducts();
-  console.log(redo);
+document.getElementById('merch').addEventListener('click', function(event) {
+  console.log(event.target.id);
+  // get name from event.target
+  // look through all the objects in the array
+    // check whether this object's name property matches event.target.name
+    // if yes, count vote
+  //re-render
 });
 
 // document.getElementById('space between pix').addEventListener('click', function(){ alert("Click right on one of the images please"); });
