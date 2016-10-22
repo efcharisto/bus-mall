@@ -12,50 +12,57 @@ var Sale = function(name, pixPath) {
   showAllPix.push(this);
 };
 
+function randomNum(){
+  return Math.floor(Math.random() * showAllPix.length);
+}
+
+//get 3 different random numbers first and then focus on the rest
+var numberOne = randomNum();
+var numberTwo = randomNum();
+var numberThree = randomNum();
 function randomizer(){
-  var numberOne = Math.floor(Math.random() * showAllPix.length);
-  var numberTwo = Math.floor(Math.random() * showAllPix.length);
-  var numberThree = Math.floor(Math.random() * showAllPix.length);
   //var randomNum = Math.floor(Math.random() * showAllPix.length);
   while(numberTwo === numberOne){
-    numberTwo = Math.floor(Math.random() * showAllPix.length);
+    numberTwo = randomNum();
     console.log(numberTwo + ' is num 2 and ' + numberOne + ' is num 1.');
-  };
+  }
 
-  while(numberThree === numberTwo){
-    numberThree = Math.floor(Math.random() * showAllPix.length);
+  while(numberThree === numberTwo || numberThree === numberOne){
+    numberThree = randomNum();
     console.log(numberThree + ' is num 3 and ' + numberTwo + 'is num 2.');
-  };
-
+  }
 }
 randomizer();
 
-function randomProduct1() {
-  // for (var i = 0; i < showAllPix.length; i++) {
-  var randomNum = Math.floor(Math.random() * showAllPix.length);
-  //get 3 different random numbers first and then focus on the rest
+function randomProducts() {
   var product1 = document.getElementById('product1');
-  product1.src = showAllPix[randomNum].pixPath;
-  // }
-}
+  product1.src = showAllPix[numberOne].pixPath;
 
-function randomProduct2() {
-  // for (var i = 0; i < showAllPix.length; i++) {
-  var randomNum = Math.floor(Math.random() * showAllPix.length);
-  //get 3 different random numbers first and then focus on the rest
   var product2 = document.getElementById('product2');
-  product2.src = showAllPix[randomNum].pixPath;
+  product2.src = showAllPix[numberTwo].pixPath;
+
+  var product3 = document.getElementById('product3');
+  product3.src = showAllPix[numberThree].pixPath;
   // }
 }
 
-function randomProduct3() {
-  // for (var i = 0; i < showAllPix.length; i++) {
-  var randomNum = Math.floor(Math.random() * showAllPix.length);
-  //get 3 different random numbers first and then focus on the rest
-  var product3 = document.getElementById('product3');
-  product3.src = showAllPix[randomNum].pixPath;
-  // }
-}
+// function randomProduct2() {
+//   // for (var i = 0; i < showAllPix.length; i++) {
+//   var randomNum = Math.floor(Math.random() * showAllPix.length);
+//   //get 3 different random numbers first and then focus on the rest
+//   var product2 = document.getElementById('product2');
+//   product2.src = showAllPix[randomNum].pixPath;
+//   // }
+// }
+//
+// function randomProduct3() {
+//   // for (var i = 0; i < showAllPix.length; i++) {
+//   var randomNum = Math.floor(Math.random() * showAllPix.length);
+//   //get 3 different random numbers first and then focus on the rest
+//   var product3 = document.getElementById('product3');
+//   product3.src = showAllPix[randomNum].pixPath;
+//   // }
+// }
 
 new Sale('bag', 'img/bag.jpg'); //not working yet, to be used later
 new Sale('banana', 'img/banana.jpg');
@@ -67,9 +74,7 @@ new Sale('cthulhu', 'img/cthulhu.jpg');
 new Sale('chair', 'img/chair.jpg');
 new Sale('dog-duck', 'img/dog-duck.jpg');
 new Sale('dragon', 'img/dragon.jpg');
-randomProduct1();
-randomProduct2();
-randomProduct3();
+randomProducts();
 
 // randomNum: function(min, max) {
 //   return Math.floor(Math.random() * (max - min + 1) + min);
