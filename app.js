@@ -54,3 +54,23 @@ function randomProducts() {
   product3.src = showAllPix[numberThree].pixPath;
 }
 randomProducts();
+
+// function remakeProducts() {
+//   var page = document.getElementById('merch');
+//   page.onclick = randomProducts();
+//   console.log(page);
+//
+// };
+// remakeProducts();
+
+document.getElementById('merch').addEventListener('click', function remakeProducts() {
+  var page = document.getElementById('merch');
+  page.onclick = randomProducts();
+  console.log(page);
+});
+
+// document.getElementById('space between pix').addEventListener('click', function(){ alert("Click right on one of the images please"); });
+
+// document.getElementById('merch').addEventListener('click', function again(){
+//   randomProducts();
+// });
