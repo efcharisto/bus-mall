@@ -16,13 +16,19 @@ function randomizer(){
   var numberOne = Math.floor(Math.random() * showAllPix.length);
   var numberTwo = Math.floor(Math.random() * showAllPix.length);
   var numberThree = Math.floor(Math.random() * showAllPix.length);
-  var randomNum = Math.floor(Math.random() * showAllPix.length);
-  do {
-    randomNum = Math.floor(Math.random() * showAllPix.length);
-  } while(numberTwo === numberThree || numberTwo === numberOne);
-  console.log(randomNum);
+  //var randomNum = Math.floor(Math.random() * showAllPix.length);
+  while(numberTwo === numberOne){
+    numberTwo = Math.floor(Math.random() * showAllPix.length);
+    console.log(numberTwo + ' is num 2 and ' + numberOne + ' is num 1.');
+  };
+
+  while(numberThree === numberTwo){
+    numberThree = Math.floor(Math.random() * showAllPix.length);
+    console.log(numberThree + ' is num 3 and ' + numberTwo + 'is num 2.');
+  };
+
 }
-// randomizer();
+randomizer();
 
 function randomProduct1() {
   // for (var i = 0; i < showAllPix.length; i++) {
