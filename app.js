@@ -12,24 +12,35 @@ var Sale = function(name, pixPath) {
   showAllPix.push(this);
 };
 
+new Sale('bag', 'img/bag.jpg'); //not working yet, to be used later
+new Sale('banana', 'img/banana.jpg');
+new Sale('bathroom', 'img/bathroom.jpg');
+new Sale('boots', 'img/boots.jpg');
+new Sale('breakfast', 'img/breakfast.jpg');
+new Sale('bubblegum', 'img/bubblegum.jpg');
+new Sale('cthulhu', 'img/cthulhu.jpg');
+new Sale('chair', 'img/chair.jpg');
+new Sale('dog-duck', 'img/dog-duck.jpg');
+new Sale('dragon', 'img/dragon.jpg');
+
 function randomNum(){
   return Math.floor(Math.random() * showAllPix.length);
 }
 
-//get 3 different random numbers first and then focus on the rest
 var numberOne = randomNum();
 var numberTwo = randomNum();
 var numberThree = randomNum();
+//get 3 different random numbers first and then focus on the rest
 function randomizer(){
   //var randomNum = Math.floor(Math.random() * showAllPix.length);
-  while(numberTwo === numberOne){
+  while (numberTwo === numberOne){
     numberTwo = randomNum();
     console.log(numberTwo + ' is num 2 and ' + numberOne + ' is num 1.');
   }
 
-  while(numberThree === numberTwo || numberThree === numberOne){
+  while (numberThree === numberTwo || numberThree === numberOne){
     numberThree = randomNum();
-    console.log(numberThree + ' is num 3 and ' + numberTwo + 'is num 2.');
+    console.log(numberThree + ' is num 3 and ' + numberTwo + ' is num 2.');
   }
 }
 randomizer();
@@ -64,16 +75,7 @@ function randomProducts() {
 //   // }
 // }
 
-new Sale('bag', 'img/bag.jpg'); //not working yet, to be used later
-new Sale('banana', 'img/banana.jpg');
-new Sale('bathroom', 'img/bathroom.jpg');
-new Sale('boots', 'img/boots.jpg');
-new Sale('breakfast', 'img/breakfast.jpg');
-new Sale('bubblegum', 'img/bubblegum.jpg');
-new Sale('cthulhu', 'img/cthulhu.jpg');
-new Sale('chair', 'img/chair.jpg');
-new Sale('dog-duck', 'img/dog-duck.jpg');
-new Sale('dragon', 'img/dragon.jpg');
+
 randomProducts();
 
 // randomNum: function(min, max) {
