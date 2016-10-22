@@ -26,12 +26,13 @@ new Sale('dragon', 'img/dragon.jpg');
 function randomNum(){
   return Math.floor(Math.random() * showAllPix.length);
 }
-//random numbers to be assigned to each image
+//making sure that all 3 random images are different
 var numberOne = randomNum();
 var numberTwo = randomNum();
 var numberThree = randomNum();
-//making sure that all 3 random images are different
+
 function randomizer(){
+  //random numbers to be assigned to each image
   while (numberTwo === numberOne){
     numberTwo = randomNum();
   }
@@ -55,18 +56,10 @@ function randomProducts() {
 }
 randomProducts();
 
-// function remakeProducts() {
-//   var page = document.getElementById('merch');
-//   page.onclick = randomProducts();
-//   console.log(page);
-//
-// };
-// remakeProducts();
-
 document.getElementById('merch').addEventListener('click', function remakeProducts() {
-  var page = document.getElementById('merch');
-  page.onclick = randomProducts();
-  console.log(page);
+  var redo = document.getElementById('merch');
+  redo.onclick = randomProducts();
+  console.log(redo);
 });
 
 // document.getElementById('space between pix').addEventListener('click', function(){ alert("Click right on one of the images please"); });
