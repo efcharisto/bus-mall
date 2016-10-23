@@ -27,12 +27,16 @@ function randomNum(){
   return Math.floor(Math.random() * showAllPix.length);
 }
 //making sure that all 3 random images are different
-var numberOne = randomNum();
-var numberTwo = randomNum();
-var numberThree = randomNum();
+var numberOne;
+var numberTwo;
+var numberThree;
 
 function randomizer(){
   //random numbers to be assigned to each image
+  numberOne = randomNum();
+  numberTwo = randomNum();
+  numberThree = randomNum();
+
   while (numberTwo === numberOne){
     numberTwo = randomNum();
   }
@@ -40,22 +44,22 @@ function randomizer(){
     numberThree = randomNum();
   }
 }
-randomizer(); // ^
 
 //DOM: gets each product by element to set source to
 //unique random values from all pix array
 function randomProducts() {
+  randomizer(); // ^
   var product1 = document.getElementById('product1');
   product1.src = showAllPix[numberOne].pixPath;
   product1.name = showAllPix[numberOne].name;
 
   var product2 = document.getElementById('product2');
   product2.src = showAllPix[numberTwo].pixPath;
-  product1.name = showAllPix[numberOne].name;
+  product2.name = showAllPix[numberTwo].name;
 
   var product3 = document.getElementById('product3');
   product3.src = showAllPix[numberThree].pixPath;
-  product1.name = showAllPix[numberOne].name;
+  product3.name = showAllPix[numberThree].name;
 }
 randomProducts();
 
@@ -70,26 +74,30 @@ randomProducts();
 // // if yes, count vote
 // //re-render
 document.getElementById('merch').addEventListener('click', function(event) {
-  if(event.target.name === showAllPix[numberOne].name) {
-    showAllPix[numberOne].vote += 1;
+  for (var i = 0; i < showAllPix.length; i++){
+    if(event.target.name === showAllPix[i].name) {
+      showAllPix[i].vote += 1;
+      console.log(showAllPix[i].vote);
+    }
   }
-  console.log(showAllPix[numberOne].vote);
+  randomProducts();
 });
 
-document.getElementById('product2').addEventListener('click', function(event) {
-  if(event.target.name === showAllPix[numberTwo].name) {
-    showAllPix[numberTwo].vote += 1;
-  }
-  console.log(showAllPix[numberTwo].vote);
-});
-
-document.getElementById('product3').addEventListener('click', function(event) {
-  if(event.target.name === showAllPix[numberThree].name) {
-    showAllPix[numberThree].vote += 1;
-  }
-  console.log(showAllPix[numberThree].vote);
-});
-
+// document.getElementById('product2').addEventListener('click', function(event) {
+//   console.log(event.target);
+//   if(event.target.name === showAllPix[numberTwo].name) {
+//     showAllPix[numberTwo].vote += 1;
+//   }
+//   console.log(showAllPix[numberTwo].vote);
+// });
+//
+// document.getElementById('product3').addEventListener('click', function(event) {
+//   if(event.target.name === showAllPix[numberThree].name) {
+//     showAllPix[numberThree].vote += 1;
+//   }
+//   console.log(showAllPix[numberThree].vote);
+// });
+//
 // document.getElementById('space between pix').addEventListener('click', function(){ alert("Click right on one of the images please"); });
 
 // document.getElementById('merch').addEventListener('click', function again(){
