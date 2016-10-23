@@ -12,6 +12,13 @@ var Sale = function(name, pixPath) {
   showAllPix.push(this);
 };
 
+// //global counter for all clicks. stop counting
+// show results,
+// display totalVotes with graph for each images
+
+
+
+
 new Sale('bag', 'img/bag.jpg'); //manual call for each instance
 new Sale('banana', 'img/banana.jpg');
 new Sale('bathroom', 'img/bathroom.jpg');
