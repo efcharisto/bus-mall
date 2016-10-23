@@ -16,9 +16,6 @@ var Sale = function(name, pixPath) {
 // show results,
 // display totalVotes with graph for each images
 
-
-
-
 new Sale('bag', 'img/bag.jpg'); //manual call for each instance
 new Sale('banana', 'img/banana.jpg');
 new Sale('bathroom', 'img/bathroom.jpg');
@@ -90,21 +87,6 @@ document.getElementById('merch').addEventListener('click', function(event) {
   randomProducts();
 });
 
-// document.getElementById('product2').addEventListener('click', function(event) {
-//   console.log(event.target);
-//   if(event.target.name === showAllPix[numberTwo].name) {
-//     showAllPix[numberTwo].vote += 1;
-//   }
-//   console.log(showAllPix[numberTwo].vote);
-// });
-//
-// document.getElementById('product3').addEventListener('click', function(event) {
-//   if(event.target.name === showAllPix[numberThree].name) {
-//     showAllPix[numberThree].vote += 1;
-//   }
-//   console.log(showAllPix[numberThree].vote);
-// });
-//
 // document.getElementById('space between pix').addEventListener('click', function(){ alert("Click right on one of the images please"); });
 
 // document.getElementById('merch').addEventListener('click', function again(){
