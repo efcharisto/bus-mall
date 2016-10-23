@@ -51,19 +51,43 @@ function randomProducts() {
 
   var product2 = document.getElementById('product2');
   product2.src = showAllPix[numberTwo].pixPath;
+  product1.name = showAllPix[numberOne].name;
 
   var product3 = document.getElementById('product3');
   product3.src = showAllPix[numberThree].pixPath;
+  product1.name = showAllPix[numberOne].name;
 }
 randomProducts();
 
+// // get name from event.target
+// product1.name = showAllPix[i].name;
+// // look through all the objects in the array
+//
+// // check whether this object's name property matches event.target.name
+// if(product1.name = event.target){
+//   product1.vote += 1;
+// }
+// // if yes, count vote
+// //re-render
 document.getElementById('merch').addEventListener('click', function(event) {
-  console.log(event.target.id);
-  // get name from event.target
-  // look through all the objects in the array
-    // check whether this object's name property matches event.target.name
-    // if yes, count vote
-  //re-render
+  if(event.target.name === showAllPix[numberOne].name) {
+    showAllPix[numberOne].vote += 1;
+  }
+  console.log(showAllPix[numberOne].vote);
+});
+
+document.getElementById('product2').addEventListener('click', function(event) {
+  if(event.target.name === showAllPix[numberTwo].name) {
+    showAllPix[numberTwo].vote += 1;
+  }
+  console.log(showAllPix[numberTwo].vote);
+});
+
+document.getElementById('product3').addEventListener('click', function(event) {
+  if(event.target.name === showAllPix[numberThree].name) {
+    showAllPix[numberThree].vote += 1;
+  }
+  console.log(showAllPix[numberThree].vote);
 });
 
 // document.getElementById('space between pix').addEventListener('click', function(){ alert("Click right on one of the images please"); });
