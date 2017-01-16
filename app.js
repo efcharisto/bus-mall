@@ -14,6 +14,7 @@ var Sale = function(name, pixPath) {
 
 // //global counter for all clicks. stop counting
 // show results,
+//
 // display totalVotes with graph for each images
 
 new Sale('bag', 'img/bag.jpg'); //manual call for each instance
